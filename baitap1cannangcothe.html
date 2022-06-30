@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> Chỉ số BMI</h1>
+    <h3>Cân nặng</h3>
+    <input type="text"id = "cân nặng">kg
+    <h3> Chiều Cao</h3>
+    <input type="text"id ="chiều cao">m<br>
+    <button onclick="ketQua()">kiểm tra</button>
+    <p id="ketqua">kết quả:</p>
+    <script>
+        function ketQua() {
+            let weight = +document.getElementById('cân nặng').value;
+            let height = +document.getElementById('chiều cao').value;
+            let bmi = weight / (height * height);
+            if (bmi < 18) {
+                document.getElementById('ketqua').innerText = "Kết Quả: thiếu cân";
+            } else if (bmi < 25.0) {
+                document.getElementById('ketqua').innerText = "Kết Quả: bình thường";
+            } else if (bmi >= 30.0) {
+                document.getElementById('ketqua').innerText = "Kết Quả: thừa cân";
+            } else {
+                document.getElementById('ketqua').innerText = "Kết Quả: béo phì";
+            }
+        }
+    </script>
+</table>
+</body>
+</html>
